@@ -8,6 +8,9 @@ function SideBar() {
             <NavLink to="newhorse">
               New Horse
             </NavLink>
+            <NavLink to="horses">
+              All Horses
+            </NavLink>
         </div>
     )
 }
