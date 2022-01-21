@@ -1,4 +1,5 @@
 import "./App.css";
+import "./css/styles.css"
 import { Route, Switch } from "react-router-dom";
 import SideBar from './components/SideBar';
 import NewHorseForm from "./components/NewHorseForm";
@@ -34,7 +35,7 @@ function App() {
   console.log(horses)
 
   return (
-    <div className="App">
+    <div className="App bg-blue-200">
       <SideBar />
       <Switch>
         <Route 
