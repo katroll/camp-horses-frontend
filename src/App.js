@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import SideBar from './components/SideBar';
 import NewHorseForm from "./components/NewHorseForm";
 import HorseList from "./components/HorseList";
+import HorseCard from "./components/HorseCard";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -31,8 +32,6 @@ function App() {
     .then(resp => resp.json())
     .then(newHorse => setHorses([...horses, newHorse]))
   }
-  
-  console.log(horses)
 
   return (
     <div className="App bg-blue-200">
@@ -43,10 +42,14 @@ function App() {
           component={() => <NewHorseForm onFormSubmit={handleFormSubmit} />}
         />
         <Route
+          exact
           path="/horses"
           component={() => <HorseList allHorses={horses}/>}
         />
-        
+        <Route 
+          path="/horses/:id"
+          component={() => <HorseCard horses={horses}/>}
+        />
       </Switch>
     </div>
 

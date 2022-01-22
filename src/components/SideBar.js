@@ -6,10 +6,10 @@ function SideBar() {
 
     return (
         <div className="sidebar-container bg-blue-400">
-            <NavLink to="newhorse">
+            <NavLink to="/newhorse">
               New Horse
             </NavLink>
-            <NavLink to="horses">
+            <NavLink to="/horses">
               All Horses
             </NavLink>
         </div>
