@@ -37,6 +37,7 @@ function NewHorseForm({ onFormSubmit }) {
                         <option>GTE</option>
                         <option>BTE</option>
                         <option>Floater</option>
+                        <option>Colts</option>
                         <option>Undecided</option>
                     </select>
                 <button className="bg-blue-500 text-white" type="submit">Submit</button>
