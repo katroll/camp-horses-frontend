@@ -33,8 +33,16 @@ function App() {
     .then(newHorse => setHorses([...horses, newHorse]))
   }
 
+
+  function handleSortByClick(e) {
+    const key = e.target.name
+    const sortedHorses = horses.sort((a, b) => a[key] > b[key] ? 1 : -1);
+
+    setHorses([...sortedHorses]);
+}
+
   return (
-    <div className="App bg-blue-200">
+    <div className="App bg-blue-200 min-h-screen">
       <SideBar />
       <Switch>
         <Route 
@@ -44,7 +52,7 @@ function App() {
         <Route
           exact
           path="/horses"
-          component={() => <HorseList allHorses={horses}/>}
+          component={() => <HorseList allHorses={horses} handleSortByClick={handleSortByClick}/>}
         />
         <Route 
           path="/horses/:id"

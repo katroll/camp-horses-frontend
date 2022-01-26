@@ -5,11 +5,11 @@ import { NavLink } from "react-router-dom";
 function SideBar() {
 
     return (
-        <div className="sidebar-container bg-blue-400">
-            <NavLink to="/newhorse">
+        <div className="flex flex-col w-40 bg-blue-400">
+            <NavLink to="/newhorse" className="antialiased">
               New Horse
             </NavLink>
-            <NavLink to="/horses">
+            <NavLink to="/horses" className="antialiased">
               All Horses
             </NavLink>
         </div>

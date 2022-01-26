@@ -1,29 +1,44 @@
 import "../css/styles.css"
 import { useHistory } from "react-router-dom"
 
-function HorseList({ allHorses }) {
+function HorseList({ allHorses, handleSortByClick }) {
     const history = useHistory();
 
     function handleHorseNameClick(e) {
-        history.push(`horses/${e.target.value}`);
+        history.push(`/horses/${e.target.value}`);
     }
 
+    console.log(allHorses)
+
     return (
-        <div className="mx-10">
+        <div className="mt-2 m-10 min-h-screen">
             <div className="flex flex-col mt-8">
                 <div className="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
                     <div className="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
                         <table className="min-w-full">
                             <thead>
                                 <tr>
-                                    <th className="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                        Name</th>
-                                    <th className="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                        Age</th>
+                                    <th className="px-6 py-3  border-b border-gray-200 bg-gray-50">
+                                        <button className="text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase"
+                                            name="name"
+                                            onClick={handleSortByClick}>
+                                            Name</button>
+                                    </th>
+                                    <th className="px-6 py-3  border-b border-gray-200 bg-gray-50">
+                                        <button className="text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase"
+                                            name="age"
+                                            onClick={handleSortByClick}>
+                                            Age</button>
+                                    </th>
                                     <th className="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                                         Year Born</th>
-                                    <th className="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
-                                        Current String</th>
+                                    <th className="px-6 py-3  border-b border-gray-200 bg-gray-50"> 
+                                        <button className="text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase"
+                                        name="string"
+                                        onClick={handleSortByClick}>
+                                        Current String
+                                        </button>
+                                    </th>
                                     <th className="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                                         Wrangler Horse?</th>
                                 </tr>
